@@ -1,4 +1,4 @@
-def call(String imageName, String registryUrl, String registryCredentialsId) {
+def call(String IMAGE_REPO, String IMAGE_NAME, String IMAGE_TAG) {
     sh """
         echo 'Deploying application to Kubernetes cluster'
         sed -i 's|image:.*|image: ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}|g' app-deployment.yaml
